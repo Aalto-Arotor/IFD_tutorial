@@ -43,5 +43,6 @@ ipyleaflet
 plotly>=6,<7
 bqplot
 
+tqdm
 openconmo>=0.0.6
-torch>=2.7.1
+pytorch>=2.7.1
