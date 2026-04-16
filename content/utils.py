@@ -167,8 +167,8 @@ def signal_windowing(signal, window_size, overlap):
 def polito_to_sklearn_format(
     polito_dict,
     rpms=[],
-    radial_loads=[],
-    axial_loads=[],
+    radial_forces=[],
+    axial_forces=[],
     window_size=20480,
     # window_size=20480 // 4,
     overlap=0.9,
@@ -192,9 +192,9 @@ def polito_to_sklearn_format(
         Dataset dictionary produced by `import_polito`.
     rpms : list, optional
         RPM values for all samples.
-    radial_loads : list, optional
+    radial_forces : list, optional
         Radial loads for all samples.
-    axial_loads : list, optional
+    axial_forces : list, optional
         Axial loads for all samples.
 
     Returns
@@ -214,8 +214,8 @@ def polito_to_sklearn_format(
     for (class_label, rpm, radial_load, axial_load), signal in polito_dict.items():
         # Check which filters are specified (non-empty)
         rpm_check = not rpms or rpm in rpms
-        radial_check = not radial_loads or radial_load in radial_loads
-        axial_check = not axial_loads or axial_load in axial_loads
+        radial_check = not radial_forces or radial_load in radial_forces
+        axial_check = not axial_forces or axial_load in axial_forces
 
         windowed_signal = None
         if rpm_check and radial_check and axial_check:
