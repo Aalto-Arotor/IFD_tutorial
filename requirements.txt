@@ -43,6 +43,7 @@ ipyleaflet
 plotly>=6,<7
 bqplot
 
+scikit-learn
 tqdm
 openconmo>=0.0.6
 torch
