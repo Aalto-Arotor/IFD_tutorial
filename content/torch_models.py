@@ -128,7 +128,7 @@ class ZoomCNN(nn.Module):
         super(ZoomCNN, self).__init__()
 
         # Demodulation block
-        self.cn_layer1 = ConvLayer_ZoomCNN(1, 16, pool_size=10, kernel_size=25)
+        self.cn_layer1 = ConvLayer_ZoomCNN(1, 16, pool_size=15, kernel_size=25)
         # Periodic signal analysis block
         self.cn_layer2 = ConvLayer_ZoomCNN(16, 32, kernel_size=25)
         self.cn_layer3 = ConvLayer_ZoomCNN(32, 64, kernel_size=25)
